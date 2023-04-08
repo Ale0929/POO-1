@@ -1,5 +1,3 @@
-
-
 //Nota importante!
 // De momento esta clase genera y utiliza una matriz de valores booleanos, 
 // hice esto porque aun no esta listo el controlador.
@@ -24,6 +22,14 @@ public class PanelAsientos extends javax.swing.JPanel {
      * Creates new form Seleccionador
      */
     private boolean seatStatus [][];
+    
+    public boolean[][] getSeatStatus() {
+        return seatStatus;
+    }
+
+    public void setSeatStatus(boolean[][] seatStatus) {
+        this.seatStatus = seatStatus;
+    }
     
     public PanelAsientos() {
         boolean grid [][] = new boolean[5][6];     
