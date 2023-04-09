@@ -1,9 +1,4 @@
-//Nota importante!
-// De momento esta clase genera y utiliza una matriz de valores booleanos, 
-// hice esto porque aun no esta listo el controlador.
-// 
-
-package vista;
+package Vista;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -11,31 +6,33 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static java.lang.Integer.parseInt;
 import javax.swing.JButton;
+import modelo.Asiento;
 
 /**
  *
- * @author Afase
+ * @author Wess
  */
 public class PanelAsientos extends javax.swing.JPanel {
 
     /**
      * Creates new form Seleccionador
      */
-    private boolean seatStatus [][];
+    private Asiento seatStatus [][];
     
-    public boolean[][] getSeatStatus() {
+    public Asiento[][] getSeatStatus() {
         return seatStatus;
     }
 
-    public void setSeatStatus(boolean[][] seatStatus) {
+    public void setSeatStatus(Asiento [][] seatStatus) {
         this.seatStatus = seatStatus;
     }
     
     public PanelAsientos() {
-        boolean grid [][] = new boolean[5][6];     
+        Asiento grid [][] = new Asiento[5][6];     
         for (int row=0; row < grid.length; row++){  
             for (int col=0; col < grid[row].length; col++){
-                grid[row][col] = true;
+                grid [row][col] = new Asiento("");
+                (grid[row][col]).setIsActive(true);
             }
         }
         this.seatStatus = grid;
@@ -43,7 +40,7 @@ public class PanelAsientos extends javax.swing.JPanel {
         initialize(grid);
     }
     
-    private void initialize(boolean [][]matrix){
+    private void initialize(Asiento [][]matrix){
         String string = ""; char ch = 'a';
         int x = 1; int y = 1;
         for (int row=0; row < matrix.length; row++){
@@ -57,7 +54,7 @@ public class PanelAsientos extends javax.swing.JPanel {
         setLayout(new GridLayout(x,y, 4, 4));
         for (int row=0; row < matrix.length; row++){
             for (int col=0; col < matrix[row].length; col++){
-                boolean value = matrix[row][col];
+                boolean value = (matrix[row][col]).isActive();
                 string = ch + string;
                 string += Integer.toString(col + 1);
                 
@@ -72,14 +69,14 @@ public class PanelAsientos extends javax.swing.JPanel {
                         int row = parseInt(string.substring(1));
                         row --;
                         
-                        boolean value = seatStatus[col][row];
+                        boolean value = (seatStatus[col][row]).isActive();
                         if (value){
                             btn.setBackground(Color.ORANGE);
-                            seatStatus[col][row] = false;
+                            (seatStatus[col][row]).setIsActive(false);
                         }
                         else{
                             btn.setBackground(Color.GREEN);
-                            seatStatus[col][row] = true;
+                            (seatStatus[col][row]).setIsActive(true);
                         }
                     }
                 });

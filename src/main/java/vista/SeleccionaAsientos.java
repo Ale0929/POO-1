@@ -74,7 +74,7 @@ public class SeleccionaAsientos extends javax.swing.JFrame {
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // The button retrieves what the user inputed to be sent to the next form.
         //I haven't programed that yet, and can't until the next form is finished.
-        boolean[][] asientos = SeatLayout.getSeatStatus();
+        Asiento[][] asientos = SeatLayout.getSeatStatus();
     }                                          
 
     /**

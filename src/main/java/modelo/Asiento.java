@@ -28,6 +28,10 @@ public class Asiento {
         this.activo = false;
     }
     
+    public void setIsActive(boolean value) {
+        this.activo = (value);
+    }
+    
     public void setString(String ID) {
         this.ID = ID;
     }
