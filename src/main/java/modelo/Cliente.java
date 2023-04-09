@@ -67,7 +67,29 @@ public class Cliente {
         this.tarjeta = tarjeta;
     }
     
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
     
+    public ArrayList<Entrada> getEntradas() {
+        return entradas;
+    }
+
+    public void setEntradas(ArrayList<Entrada> entradas) {
+        this.entradas = entradas;
+    }
+    
+    public String getDetalleEntradas() {
+        String resultado = "";
+            for (Entrada entrada : entradas) {
+                resultado += entrada.getAsiento().getID()+"\n";
+            }
+        return resultado;
+    }
 
     @Override
     public String toString() {
