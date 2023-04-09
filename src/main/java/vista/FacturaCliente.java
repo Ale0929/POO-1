@@ -9,7 +9,6 @@ import modelo.Factura;
 import javax.swing.JFrame;
 
 public class FacturaCliente extends javax.swing.JFrame {
-    //SIN HACER
     Controlador controlador = MainWindow.controlador;
     private JFrame main;
     private Factura factura;
