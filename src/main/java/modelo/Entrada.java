@@ -11,4 +11,25 @@ package Modelo;
 public class Entrada {
     private Evento evento;
     private Asiento asiento;
+    
+    public Entrada(Evento evento, Asiento asiento) {
+        this.evento = evento;
+        this.asiento = asiento;
+    }
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
+    }
+
+    public Asiento getAsiento() {
+        return asiento;
+    }
+
+    public void setAsiento(Asiento asiento) {
+        this.asiento = asiento;
+    }
 }
