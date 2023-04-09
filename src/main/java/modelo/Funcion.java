@@ -20,6 +20,22 @@ public class Funcion {
     private Asiento matrizAsiento[][];
     private char arregloLetras[];
     
+    public Funcion(){
+        String string = ""; char ch = 'a';
+        Asiento grid [][] = new Asiento[5][5];     
+        for (int row=0; row < grid.length; row++){  
+            for (int col=0; col < grid[row].length; col++){
+                string = ch + string;
+                string += Integer.toString(col + 1);
+                grid [row][col] = new Asiento(string);
+                (grid[row][col]).setIsActive(true);
+                string = "";
+            }
+            ch ++;
+        }
+        this.setMatrizAsiento(grid);
+    }
+    
     public void setFecha(int dia, int mes, int año) {
         fecha = new GregorianCalendar(año, mes-1, dia);
     }

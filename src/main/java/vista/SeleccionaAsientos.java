@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
+package Vista;
+
+import modelo.Asiento;
 
 /**
- *
+ * 
  * @author Wess
  */
 public class SeleccionaAsientos extends javax.swing.JFrame {
@@ -26,11 +28,14 @@ public class SeleccionaAsientos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        SeatLayout = new vista.PanelAsientos();
         lblTitulo = new javax.swing.JLabel();
         btnComprar = new javax.swing.JButton();
+        SeatLayout = new Vista.PanelAsientos();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setFocusTraversalPolicyProvider(true);
+        setForeground(new java.awt.Color(51, 51, 51));
 
         lblTitulo.setFont(new java.awt.Font("Bookman Old Style", 0, 36)); // NOI18N
         lblTitulo.setText("Seleccione sus asientos");
@@ -50,11 +55,13 @@ public class SeleccionaAsientos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(SeatLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SeatLayout, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblTitulo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblTitulo)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,9 +70,11 @@ public class SeleccionaAsientos extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SeatLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 200, Short.MAX_VALUE))
+                    .addComponent(SeatLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
 
         pack();
@@ -103,6 +112,7 @@ public class SeleccionaAsientos extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(SeleccionaAsientos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -113,7 +123,7 @@ public class SeleccionaAsientos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private vista.PanelAsientos SeatLayout;
+    private Vista.PanelAsientos SeatLayout;
     private javax.swing.JButton btnComprar;
     private javax.swing.JLabel lblTitulo;
     // End of variables declaration                   
