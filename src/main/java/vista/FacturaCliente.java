@@ -5,19 +5,18 @@
 package Vista;
 
 import Control.Controlador;
-import Modelo.Cliente;
-import Modelo.Tarjeta;
-import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 
 public class FacturaCliente extends javax.swing.JFrame {
     //SIN HACER
     Controlador controlador = MainWindow.controlador;
     private JFrame main;
+    private Factura factura;
     
-    public FacturaCliente(JFrame main) {
+    public FacturaCliente(JFrame main, Factura factura) {
         initComponents();
         this.main = main;
+        this.factura = factura;
     }
 
     
