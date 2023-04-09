@@ -71,5 +71,7 @@ public class Evento {
         this.precio = precio;
     }
     
-    
+    public double getPrecioSinIVA() {
+        return (precio*100)/113;
+    }
 }
