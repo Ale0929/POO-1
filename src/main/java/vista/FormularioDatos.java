@@ -6,19 +6,16 @@ package Vista;
 
 import Control.Controlador;
 import Modelo.Cliente;
-import Modelo.Factura;
-import Modelo.Funcion;
 import Modelo.Tarjeta;
 import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 public class FormularioDatos extends javax.swing.JFrame {
     
     Controlador controlador = MainWindow.controlador;
     private JFrame main;
-    private Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
+    private final Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
     
     public FormularioDatos(JFrame main) {
         initComponents();
@@ -101,18 +98,18 @@ public class FormularioDatos extends javax.swing.JFrame {
         //Setting months
         mesCombo.removeAllItems();
         mesCombo.addItem("");
-        mesCombo.addItem("Enero");
-        mesCombo.addItem("Febrero");
-        mesCombo.addItem("Marzo");
-        mesCombo.addItem("Abril");
-        mesCombo.addItem("Mayo");
-        mesCombo.addItem("Junio");
-        mesCombo.addItem("Julio");
-        mesCombo.addItem("Agosto");
-        mesCombo.addItem("Setiembre");
-        mesCombo.addItem("Octubre");
-        mesCombo.addItem("Noviembre");
-        mesCombo.addItem("Diciembre");
+        mesCombo.addItem("1");
+        mesCombo.addItem("2");
+        mesCombo.addItem("3");
+        mesCombo.addItem("4");
+        mesCombo.addItem("5");
+        mesCombo.addItem("6");
+        mesCombo.addItem("7");
+        mesCombo.addItem("8");
+        mesCombo.addItem("9");
+        mesCombo.addItem("10");
+        mesCombo.addItem("11");
+        mesCombo.addItem("12");
         
         //Setting years
         añoCombo.removeAllItems();
