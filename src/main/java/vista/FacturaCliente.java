@@ -5,6 +5,7 @@
 package Vista;
 
 import Control.Controlador;
+import modelo.Factura;
 import javax.swing.JFrame;
 
 public class FacturaCliente extends javax.swing.JFrame {
