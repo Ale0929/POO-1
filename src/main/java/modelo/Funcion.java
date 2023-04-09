@@ -20,20 +20,23 @@ public class Funcion {
     private Asiento matrizAsiento[][];
     private char arregloLetras[];
     
-    public Funcion(){
-        String string = ""; char ch = 'a';
-        Asiento grid [][] = new Asiento[5][5];     
-        for (int row=0; row < grid.length; row++){  
-            for (int col=0; col < grid[row].length; col++){
+    public Funcion(Calendar fecha, int hora, int minuto, int cantFilas, int cantColumnas){
+        this.fecha = fecha;
+        this.hora = hora;
+        this.minuto = minuto;
+        matrizAsiento = new Asiento[cantFilas][cantColumnas];
+        
+        String string = ""; char ch = 'a';    
+        for (int row=0; row < matrizAsiento.length; row++){  
+            for (int col=0; col < matrizAsiento[0].length; col++){
                 string = ch + string;
                 string += Integer.toString(col + 1);
-                grid [row][col] = new Asiento(string);
-                (grid[row][col]).setIsActive(true);
+                matrizAsiento[row][col] = new Asiento(string);
+                matrizAsiento[row][col].setIsActive(true);
                 string = "";
             }
-            ch ++;
+            ch++;
         }
-        this.setMatrizAsiento(grid);
     }
     
     public void setFecha(int dia, int mes, int año) {
@@ -70,18 +73,6 @@ public class Funcion {
 
     public Asiento[][] getMatrizAsiento() {
         return matrizAsiento;
-    }
-
-    public void setMatrizAsiento(Asiento[][] matrizAsiento) {
-        this.matrizAsiento = matrizAsiento;
-    }
-
-    public char[] getArregloLetras() {
-        return arregloLetras;
-    }
-
-    public void setArregloLetras(char[] arregloLetras) {
-        this.arregloLetras = arregloLetras;
     }
     
     public boolean yaVendio() {
