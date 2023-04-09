@@ -28,12 +28,17 @@ public class PanelAsientos extends javax.swing.JPanel {
     }
     
     public PanelAsientos() {
-        Asiento grid [][] = new Asiento[5][6];     
+        String string = ""; char ch = 'a';
+        Asiento grid [][] = new Asiento[5][5];     
         for (int row=0; row < grid.length; row++){  
             for (int col=0; col < grid[row].length; col++){
-                grid [row][col] = new Asiento("");
+                string = ch + string;
+                string += Integer.toString(col + 1);
+                grid [row][col] = new Asiento(string);
                 (grid[row][col]).setIsActive(true);
+                string = "";
             }
+            ch ++;
         }
         this.seatStatus = grid;
         initComponents();
@@ -41,7 +46,7 @@ public class PanelAsientos extends javax.swing.JPanel {
     }
     
     private void initialize(Asiento [][]matrix){
-        String string = ""; char ch = 'a';
+        String string = "";
         int x = 1; int y = 1;
         for (int row=0; row < matrix.length; row++){
             for (int col=0; col < matrix[row].length; col++){
@@ -49,17 +54,15 @@ public class PanelAsientos extends javax.swing.JPanel {
             }
             y = row;
         }
-        
-        
-        setLayout(new GridLayout(x,y, 4, 4));
+        setLayout(new GridLayout(5,5, 4, 4));
         for (int row=0; row < matrix.length; row++){
             for (int col=0; col < matrix[row].length; col++){
                 boolean value = (matrix[row][col]).isActive();
-                string = ch + string;
-                string += Integer.toString(col + 1);
-                
+                string = (matrix[row][col]).getID();
                 JButton btn = new JButton(string);
                 btn.setText(string);
+                string = "";
+                
                 btn.addActionListener(new ActionListener(){
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -89,9 +92,7 @@ public class PanelAsientos extends javax.swing.JPanel {
                     btn.setEnabled(false);
                 }
                 this.add(btn);
-                string = "";
             }
-            ch ++;
         }
     }
 
@@ -120,3 +121,4 @@ public class PanelAsientos extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
+
