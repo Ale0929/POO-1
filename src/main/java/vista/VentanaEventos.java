@@ -52,7 +52,7 @@ public class VentanaEventos extends javax.swing.JFrame {
 
     private void setEventos() {
         try {
-            File f = new File("C:\\Users\\hgabr\\OneDrive\\Documentos\\TEC\\Primer Semestre 2023\\POO\\PROGRA #1\\Imagenes\\auditorio.jpg");
+            File f = new File("Imagenes\\auditorio.jpg");
             read = ImageIO.read(f);
             background.setIcon(new ImageIcon(read));
             background.setSize(read.getWidth(), read.getHeight());
