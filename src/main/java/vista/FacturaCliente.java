@@ -18,16 +18,28 @@ public class FacturaCliente extends javax.swing.JFrame {
         initComponents();
         this.main = main;
         this.factura = factura;
+        createFactura();
     }
 
-    
+    private void createFactura() {
+        //Comentado porque no se han creado los JLabels en la parte de Design de Netbeans
+        //Importante crearlo con estos nombres de lbl para que funcione
+        
+        //lblFecha.setText(Funcion.formatearFecha(factura.getFecha()));
+        //lblNumero.setText(String.valueOf(factura.getNumero()));
+        //lblDatosCliente.setText(factura.getCliente().toString());
+        //lblCantidadFacturas.setText(String.valueOf(factura.getCliente().getEntradas().size));
+        //lblDetalleAsientos.setText(factura.getCliente().getDetalleEntradas());
+        //lblDatosTarjeta.setText(factura.getCliente().getTarjeta().getLastFour());
+        //lblTotalCompra.setText(factura.getDetalleTotalCompra());
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        btnSaveData = new javax.swing.JButton();
+        btnContinue = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         exitbtn = new javax.swing.JButton();
@@ -37,14 +49,14 @@ public class FacturaCliente extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnSaveData.setBackground(new java.awt.Color(0, 0, 153));
-        btnSaveData.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
-        btnSaveData.setForeground(new java.awt.Color(153, 153, 153));
-        btnSaveData.setText("Siguiente");
-        btnSaveData.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        btnSaveData.addActionListener(new java.awt.event.ActionListener() {
+        btnContinue.setBackground(new java.awt.Color(0, 0, 153));
+        btnContinue.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
+        btnContinue.setForeground(new java.awt.Color(153, 153, 153));
+        btnContinue.setText("Siguiente");
+        btnContinue.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        btnContinue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveDataActionPerformed(evt);
+                btnContinueActionPerformed(evt);
             }
         });
 
@@ -76,7 +88,7 @@ public class FacturaCliente extends javax.swing.JFrame {
                         .addGap(83, 83, 83)
                         .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSaveData, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -89,7 +101,7 @@ public class FacturaCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSaveData, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
 
@@ -113,7 +125,7 @@ public class FacturaCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSaveDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveDataActionPerformed
+    private void btnContinuectionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveDataActionPerformed
         
     }//GEN-LAST:event_btnSaveDataActionPerformed
 
@@ -125,7 +137,7 @@ public class FacturaCliente extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSaveData;
+    private javax.swing.JButton btnContinue;
     private javax.swing.JButton exitbtn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
