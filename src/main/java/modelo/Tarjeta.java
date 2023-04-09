@@ -21,5 +21,36 @@ public class Tarjeta {
         this.codigoVerficacion = codigoVerficacion;
     }
     
+    public int getDigitosTarjeta() {
+        return digitosTarjeta;
+    }
+
+    public void setDigitosTarjeta(int digitosTarjeta) {
+        this.digitosTarjeta = digitosTarjeta;
+    }
+
+    public Calendar getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(Calendar fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
+
+    public int getCodigoVerficacion() {
+        return codigoVerficacion;
+    }
+
+    public void setCodigoVerficacion(int codigoVerficacion) {
+        this.codigoVerficacion = codigoVerficacion;
+    }
     
+    public String getLastFour() {
+        String converted = String.valueOf(digitosTarjeta);
+        String resultado = "";
+        for (int i = 12; i <= converted.length(); i++) {
+            resultado+=converted.charAt(i);
+        }
+        return resultado;
+    }
 }
