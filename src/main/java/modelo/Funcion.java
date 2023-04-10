@@ -75,6 +75,11 @@ public class Funcion {
         return matrizAsiento;
     }
     
+    public void setMatrizAsiento(Asiento[][] matrizAsiento) {
+        this.matrizAsiento = matrizAsiento;
+    }
+    
+    
     public boolean yaVendio() {
         for (int i = 0; i < matrizAsiento.length; i++) {
             for (int j = 0; j < matrizAsiento[0].length; j++) {
