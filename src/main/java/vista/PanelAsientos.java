@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import static java.lang.Integer.parseInt;
 import javax.swing.JButton;
 import modelo.Asiento;
+import modelo.Funcion;
 
 /**
  *
@@ -27,7 +28,7 @@ public class PanelAsientos extends javax.swing.JPanel {
         this.seatStatus = seatStatus;
     }
     
-    public PanelAsientos() {
+    public PanelAsientos() { // Metodo constructor para pruebas.
         String string = ""; char ch = 'a';
         Asiento grid [][] = new Asiento[5][5];     
         for (int row=0; row < grid.length; row++){  
@@ -40,6 +41,14 @@ public class PanelAsientos extends javax.swing.JPanel {
             }
             ch ++;
         }
+        (grid[1][3]).setIsActive(false);
+        this.seatStatus = grid;
+        initComponents();
+        initialize(grid);
+    }
+    
+    public PanelAsientos(Funcion selectedValue) {
+        Asiento grid [][] = selectedValue.getMatrizAsiento();
         this.seatStatus = grid;
         initComponents();
         initialize(grid);
@@ -54,7 +63,7 @@ public class PanelAsientos extends javax.swing.JPanel {
             }
             y = row;
         }
-        setLayout(new GridLayout(5,5, 4, 4));
+        setLayout(new GridLayout(5,0, 4, 4));
         for (int row=0; row < matrix.length; row++){
             for (int col=0; col < matrix[row].length; col++){
                 boolean value = (matrix[row][col]).isActive();
@@ -90,6 +99,7 @@ public class PanelAsientos extends javax.swing.JPanel {
                 else{
                     btn.setBackground(Color.RED);
                     btn.setEnabled(false);
+                    (matrix[row][col]).setIsActive(true);
                 }
                 this.add(btn);
             }
@@ -121,4 +131,3 @@ public class PanelAsientos extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
-
