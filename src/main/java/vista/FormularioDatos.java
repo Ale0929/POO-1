@@ -17,7 +17,7 @@ public class FormularioDatos extends javax.swing.JFrame {
     private JFrame main;
     private final Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
     
-    public FormularioDatos(JFrame main) {
+    public FormularioDatos(JFrame main, ArrayList<Asiento> asientosComprados, Funcion selectedValue) {
         initComponents();
         setComponents();
         this.main = main;
