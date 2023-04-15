@@ -2,22 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Modelo;
+package modelo;
 
 import java.util.Calendar;
-
 
 /**
  *
  * @author hgabr
  */
 public class Factura {
+
     private int numero;
     private Calendar fecha;
     private Cliente cliente;
     private double totalCompra;
-    private double totalSinIVA;
+    public double totalSinIVA;
     private final int iva = 13;
+    public Tarjeta tarjeta;
     
     private static int identificador = 1;
 
@@ -66,12 +67,29 @@ public class Factura {
          identificador++;
     }
     
+    public Tarjeta getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(Tarjeta tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+    
+    public double getTotalSinIVA() {
+        return totalSinIVA;
+    }
+
+    public void setTotalSinIVA(double totalSinIVA) {
+        this.totalSinIVA = totalSinIVA;
+    }
+    
+    
     public String getDetalleTotalCompra() {
         String resultado = "";
-        resultado += "Total sin IVA: " + String.valueOf(totalSinIVA) + "\n";
+        resultado += "Total sin IVA: " + String.valueOf(getTotalSinIVA()) + "\n";
         resultado += "IVA: " + String.valueOf(iva) + "\n";
         resultado += "Total con IVA: " + String.valueOf(totalCompra);
         return resultado;
     }
     
-}
+ }
