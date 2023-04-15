@@ -30,7 +30,7 @@ public class PanelAsientos extends javax.swing.JPanel {
     
     public PanelAsientos() { // Metodo constructor para pruebas.
         String string = ""; char ch = 'a';
-        Asiento grid [][] = new Asiento[5][5];     
+        Asiento grid [][] = new Asiento[20][15];     
         for (int row=0; row < grid.length; row++){  
             for (int col=0; col < grid[row].length; col++){
                 string = ch + string;
@@ -47,8 +47,26 @@ public class PanelAsientos extends javax.swing.JPanel {
         initialize(grid);
     }
     
-    public PanelAsientos(Funcion selectedValue) {
+    public PanelAsientos(Funcion selectedValue) { //Para que genere algo con un objeto funcion
         Asiento grid [][] = selectedValue.getMatrizAsiento();
+        this.seatStatus = grid;
+        initComponents();
+        initialize(grid);
+    }
+    
+    public PanelAsientos(int rows, int columns) { //Para generar una matriz de un especifico tamaño
+        Asiento grid [][] = new Asiento[rows][columns];
+        String string = ""; char ch = 'a';
+        for (int row=0; row < grid.length; row++){  
+            for (int col=0; col < grid[row].length; col++){
+                string = ch + string;
+                string += Integer.toString(col + 1);
+                grid [row][col] = new Asiento(string);
+                (grid[row][col]).setIsActive(true);
+                string = "";
+            }
+            ch ++;
+        }
         this.seatStatus = grid;
         initComponents();
         initialize(grid);
@@ -63,7 +81,7 @@ public class PanelAsientos extends javax.swing.JPanel {
             }
             y = row;
         }
-        setLayout(new GridLayout(5,0, 4, 4));
+        setLayout(new GridLayout(y+1,x+1, 3, 3));
         for (int row=0; row < matrix.length; row++){
             for (int col=0; col < matrix[row].length; col++){
                 boolean value = (matrix[row][col]).isActive();
@@ -80,7 +98,6 @@ public class PanelAsientos extends javax.swing.JPanel {
                         int col = line - 'a';
                         int row = parseInt(string.substring(1));
                         row --;
-                        
                         boolean value = (seatStatus[col][row]).isActive();
                         if (value){
                             btn.setBackground(Color.ORANGE);
@@ -131,3 +148,4 @@ public class PanelAsientos extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
+
