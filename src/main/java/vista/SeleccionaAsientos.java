@@ -119,16 +119,15 @@ public class SeleccionaAsientos extends javax.swing.JFrame {
         Asiento[][] asientos = SeatLayout.getSeatStatus();
         for (int row=0; row < asientos.length; row++){
             for (int col=0; col < asientos[row].length; col++){
-                if(!asientos[col][row].isActive()){
+                if(!asientos[row][col].isActive()){
                     Asiento [][] temp = (this.selectedValue).getMatrizAsiento();
-                    (temp [col][row]).setIsActive(false);
+                    (temp [row][col]).setIsActive(false);
                     (this.selectedValue).setMatrizAsiento(temp);
-                    asientosComprados.add(asientos[col][row]);
+                    asientosComprados.add(asientos[row][col]);
                     hold = true;
                 }
             }
         }
-
         new FormularioDatos(this, this.asientosComprados, selectedValue).setVisible(true);
         this.dispose();
     }                                          
