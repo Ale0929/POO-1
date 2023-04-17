@@ -6,10 +6,12 @@ package Vista;
 
 import Control.Controlador;
 import Modelo.Cliente;
+import Modelo.Factura;
 import Modelo.Tarjeta;
 import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class FormularioDatos extends javax.swing.JFrame {
     
@@ -374,8 +376,16 @@ public class FormularioDatos extends javax.swing.JFrame {
                                         Integer.parseInt(txfNumeroCelular.getText()),
                                         tarjeta);
             controlador.getClientes().añadirCliente(toAdd);
-            //Factura nueva = new Factura(fecha, toAdd, precio)
+            Factura nueva = new Factura(new GregorianCalendar(),
+                                        toAdd, 
+                                        toAdd.getEntradas().size() * toAdd.getEntradas().get(0).getEvento().getPrecio(),
+                                        toAdd.getEntradas().size() * toAdd.getEntradas().get(0).getEvento().getPrecioSinIVA());
+            FacturaCliente ventanaFactura = new FacturaCliente(main, nueva);
+            this.setVisible(false);
+            ventanaFactura.setVisible(true);
         }
+        else
+            JOptionPane.showMessageDialog(this, "Dato erroneo ingresado", "Error", 1);
     }//GEN-LAST:event_btnSaveDataActionPerformed
 
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
