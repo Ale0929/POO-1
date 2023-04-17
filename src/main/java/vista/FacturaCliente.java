@@ -5,7 +5,8 @@
 package Vista;
 
 import Control.Controlador;
-import modelo.Factura;
+import Modelo.Factura;
+import Modelo.Funcion;
 import javax.swing.JFrame;
 
 public class FacturaCliente extends javax.swing.JFrame {
@@ -21,16 +22,14 @@ public class FacturaCliente extends javax.swing.JFrame {
     }
 
     private void createFactura() {
-        //Comentado porque no se han creado los JLabels en la parte de Design de Netbeans
-        //Importante crearlo con estos nombres de lbl para que funcione
-        
-        //lblFecha.setText(Funcion.formatearFecha(factura.getFecha()));
-        //lblNumero.setText(String.valueOf(factura.getNumero()));
-        //lblDatosCliente.setText(factura.getCliente().toString());
-        //lblCantidadFacturas.setText(String.valueOf(factura.getCliente().getEntradas().size));
-        //lblDetalleAsientos.setText(factura.getCliente().getDetalleEntradas());
-        //lblDatosTarjeta.setText(factura.getCliente().getTarjeta().getLastFour());
-        //lblTotalCompra.setText(factura.getDetalleTotalCompra());
+        lblFecha.setText(Funcion.formatearFecha(factura.getFecha()));
+        lblNumero.setText(String.valueOf(factura.getNumero()));
+        lblDatosCliente.setText(factura.getCliente().toString());
+        lblCantidadFacturas.setText(String.valueOf(factura.getCliente().getEntradas().size));
+        lblDetalleAsientos.setText(factura.getCliente().getDetalleEntradas());
+        lblDatosTarjeta.setText(factura.getCliente().getTarjeta().getLastFour());
+        lblTotalCompra.setText(factura.getDetalleTotalCompra());
+        //set numero de letra si en pruebas se ve mal
     }
     
     @SuppressWarnings("unchecked")
@@ -42,6 +41,13 @@ public class FacturaCliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         exitbtn = new javax.swing.JButton();
+        lblFecha = new javax.swing.JLabel();
+        lblNumero = new javax.swing.JLabel();
+        lblDatosCliente = new javax.swing.JLabel();
+        lblCantidadFacturas = new javax.swing.JLabel();
+        lblDetalleAsientos = new javax.swing.JLabel();
+        lblDatosTarjeta = new javax.swing.JLabel();
+        lblTotalCompra = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,20 +80,53 @@ public class FacturaCliente extends javax.swing.JFrame {
             }
         });
 
+        lblFecha.setBackground(new java.awt.Color(255, 255, 255));
+        lblFecha.setOpaque(true);
+
+        lblNumero.setBackground(new java.awt.Color(255, 255, 255));
+        lblNumero.setOpaque(true);
+
+        lblDatosCliente.setBackground(new java.awt.Color(255, 255, 255));
+        lblDatosCliente.setOpaque(true);
+
+        lblCantidadFacturas.setBackground(new java.awt.Color(255, 255, 255));
+        lblCantidadFacturas.setOpaque(true);
+
+        lblDetalleAsientos.setBackground(new java.awt.Color(255, 255, 255));
+        lblDetalleAsientos.setOpaque(true);
+
+        lblDatosTarjeta.setBackground(new java.awt.Color(255, 255, 255));
+        lblDatosTarjeta.setOpaque(true);
+
+        lblTotalCompra.setBackground(new java.awt.Color(255, 255, 255));
+        lblTotalCompra.setOpaque(true);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(83, 83, 83)
-                        .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(83, 83, 83)
+                                .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDatosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCantidadFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDetalleAsientos, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDatosTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -95,7 +134,21 @@ public class FacturaCliente extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 289, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblDatosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCantidadFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblDetalleAsientos, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblDatosTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -125,7 +178,7 @@ public class FacturaCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnContinuectionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveDataActionPerformed
-        
+        this.setVisible(false);
     }//GEN-LAST:event_btnSaveDataActionPerformed
 
     private void exitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitbtnActionPerformed
@@ -141,5 +194,12 @@ public class FacturaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblCantidadFacturas;
+    private javax.swing.JLabel lblDatosCliente;
+    private javax.swing.JLabel lblDatosTarjeta;
+    private javax.swing.JLabel lblDetalleAsientos;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblNumero;
+    private javax.swing.JLabel lblTotalCompra;
     // End of variables declaration//GEN-END:variables
 }
