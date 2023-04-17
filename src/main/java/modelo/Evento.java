@@ -16,9 +16,9 @@ public class Evento {
     private ArrayList<Funcion> listaFunciones;
     private double precio;
 
-    public Evento(String nombre, ArrayList<Funcion> listaFunciones, double precio) {
+    public Evento(String nombre, double precio) {
         this.nombre = nombre;
-        this.listaFunciones = listaFunciones;
+        this.listaFunciones = new ArrayList<Funcion>();
         this.precio = precio;
     }
     
@@ -73,5 +73,9 @@ public class Evento {
     
     public double getPrecioSinIVA() {
         return (precio*100)/113;
+    }
+    
+    public void addFunciones(Funcion nuevo) {
+        listaFunciones.add(nuevo);
     }
 }
