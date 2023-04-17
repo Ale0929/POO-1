@@ -18,7 +18,6 @@ public class Funcion {
     private int hora;
     private int minuto;
     private Asiento matrizAsiento[][];
-    private char arregloLetras[];
     
     public Funcion(Calendar fecha, int hora, int minuto, int cantFilas, int cantColumnas){
         this.fecha = fecha;
