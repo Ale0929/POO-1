@@ -47,4 +47,8 @@ public class Auditorio {
     public void setListaEventos(ArrayList<Evento> listaEventos) {
         this.listaEventos = listaEventos;
     }
+    
+    public void agregarEvento(Evento nuevo) {
+        listaEventos.add(nuevo);
+    }
 }
